@@ -4,8 +4,8 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
-import './App.css';
 import { setSearchField, requestRobots } from '../actions';
+import './App.css';
 
 const mapStateToProps = state => {
     // Note if we only have one reducer we can access state by using state.statevarname, but
