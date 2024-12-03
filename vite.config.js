@@ -36,8 +36,8 @@ export default defineConfig({
       injectRegister: 'auto',
 
       workbox: {
-        globPatterns: ["**/assets/*.woff"],
-        globDirectory: "dist",
+        // globPatterns: ["**/assets/*.woff"],
+        // globDirectory: "dist",
         runtimeCaching: [
           { // Robot Information
             urlPattern: ({url}) => url.origin === "https://jsonplaceholder.typicode.com",
@@ -45,7 +45,7 @@ export default defineConfig({
             options: {
               cacheName: "robots-info-cache",
               cacheableResponse: {
-                statuses: [200]
+                statuses: [0, 200]
               }
             }
           },
@@ -56,7 +56,7 @@ export default defineConfig({
             options: {
               cacheName: "robots-images-cache",
               cacheableResponse: {
-                statuses: [200]
+                statuses: [0, 200]
               }
             }
           }
