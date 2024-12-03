@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/robofriends",
+  base: "/robofriends/",
   plugins: [
     react(),
     VitePWA({
@@ -45,7 +45,7 @@ export default defineConfig({
             options: {
               cacheName: "robots-info-cache",
               cacheableResponse: {
-                statuses: [200]
+                statuses: [0, 200]
               }
             }
           },
@@ -56,7 +56,7 @@ export default defineConfig({
             options: {
               cacheName: "robots-images-cache",
               cacheableResponse: {
-                statuses: [200]
+                statuses: [0, 200]
               }
             }
           }
