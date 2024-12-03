@@ -36,8 +36,8 @@ export default defineConfig({
       injectRegister: 'auto',
 
       workbox: {
-        globPatterns: ["**/assets/*.woff"],
-        globDirectory: "dist",
+        // globPatterns: ["**/assets/*.woff"],
+        // globDirectory: "dist",
         runtimeCaching: [
           { // Robot Information
             urlPattern: ({url}) => url.origin === "https://jsonplaceholder.typicode.com",
