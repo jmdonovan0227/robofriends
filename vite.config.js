@@ -8,7 +8,9 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon.svg', 'favicon-96x96.png'],
+      includeAssets: [
+        'favicon.ico', 'apple-touch-icon.png', 'favicon.svg', 'favicon-96x96.png',
+      ],
       manifest: {
         name: "Robofriends",
         short_name: "Rfriends",
@@ -38,16 +40,32 @@ export default defineConfig({
       },
 
       workbox: {
-        runtimeCaching: [{
-          urlPattern: "https://jsonplaceholder.typicode.com/users",
-          handler: "CacheFirst",
-          options: {
-            cacheName: "robots-api-cache",
-            cacheableResponse: {
-              statuses: [0, 200]
+        globDirectory: "dist",
+        globPatterns: ["**/*.{woff}"],
+        runtimeCaching: [
+          { // Robot Information
+            urlPattern: ({url}) => url.origin === "https://jsonplaceholder.typicode.com",
+            handler: "CacheFirst",
+            options: {
+              cacheName: "robots-info-cache",
+              cacheableResponse: {
+                statuses: [200]
+              }
+            }
+          },
+
+          { // Robot Pictures
+            urlPattern: ({url}) => url.origin === "https://robohash.org",
+            handler: "CacheFirst",
+            options: {
+              cacheName: "robots-images-cache",
+              cacheableResponse: {
+                statuses: [200]
+              }
             }
           }
-        }]
+
+        ]
       }
     })
   ],
