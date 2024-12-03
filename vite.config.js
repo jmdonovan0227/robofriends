@@ -35,10 +35,6 @@ export default defineConfig({
       
       injectRegister: 'auto',
 
-      devOptions: {
-        enabled: true
-      },
-
       workbox: {
         globPatterns: ["**/assets/*.woff"],
         globDirectory: "dist",
