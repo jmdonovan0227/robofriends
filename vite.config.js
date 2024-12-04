@@ -56,8 +56,9 @@ export default defineConfig({
               }
             }
           }
-          
-        ]
+        ],
+
+        globPatterns: ['**/*.{woff}']
       },
     })
   ]
