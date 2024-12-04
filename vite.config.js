@@ -58,7 +58,7 @@ export default defineConfig({
           }
         ],
 
-        globPatterns: ['**/assets/*.{woff}']
+        globPatterns: ['**/assets/*.woff']
       },
     })
   ]
