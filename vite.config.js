@@ -10,7 +10,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'prompt',
       injectRegister: 'auto',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon-96x96.png', 'favicon.svg', '/assets/SEGA-CyEAxcSW.woff'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon-96x96.png', 'favicon.svg', 'assets/*.woff'],
       manifest: {
         name: 'Robofriends',
         short_name: "Rfriends",
@@ -34,7 +34,6 @@ export default defineConfig({
       },
 
       workbox: {
-        // globPatterns: ['**/assets/*.woff'],
         runtimeCaching: [
           {
             urlPattern: ({url}) => url.origin === 'https://jsonplaceholder.typicode.com',
