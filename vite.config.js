@@ -10,7 +10,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'prompt',
       injectRegister: 'auto',
-      includeAssets: ['/*.woff'],
+      includeAssets: ['*.woff'],
       manifest: {
         name: 'Robofriends',
         short_name: "Rfriends",
