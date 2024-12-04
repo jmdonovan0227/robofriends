@@ -58,6 +58,7 @@ export default defineConfig({
           }
         ],
 
+        globDirectory: 'dist',
         globPatterns: ['**/assets/*.woff']
       },
     })
