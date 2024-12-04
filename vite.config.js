@@ -44,7 +44,19 @@ export default defineConfig({
                 statuses: [0, 200]
               }
             }
+          },
+
+          {
+            urlPattern: ({url}) => url.origin === 'https://robohash.org',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'robots-images-cache',
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
           }
+          
         ]
       },
     })
