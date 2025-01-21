@@ -1,11 +1,16 @@
-import React from 'react';
-import Card from './Card';
+import Card from '../Card/Card';
+import { IRobot } from '../MainPage/MainPage';
 
-const CardList = ({ robots }) => {
+interface CardListProps {
+    robots: Array<IRobot>
+}
+
+const CardList : React.FC<CardListProps> = ({ robots } : CardListProps) => {
     return (
         <div>
             {
-                robots.map((user, i) => {
+                // <h1>Hello</h1>
+                robots.map((_, i) => {
                     return (<Card 
                         key={i} 
                         id={robots[i].id} 
